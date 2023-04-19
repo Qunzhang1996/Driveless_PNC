@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="继承方式.cpp">
+    <ClCompile Include="制作饮品.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
