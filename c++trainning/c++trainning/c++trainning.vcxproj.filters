@@ -18,5 +18,8 @@
     <ClCompile Include="制作饮品.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="职工管理系统.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
