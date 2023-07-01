@@ -4,8 +4,6 @@
 using namespace std;
 class Person
 {
-private:
-    /* data */
 public:
     Person(string name, int age, int height)
     {

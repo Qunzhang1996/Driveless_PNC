@@ -1,0 +1,3 @@
+/home/zq/C-programe-practise/Cmake_learnning/helloworld/CMakeFiles/HELLOWORLD_cmake.dir
+/home/zq/C-programe-practise/Cmake_learnning/helloworld/CMakeFiles/edit_cache.dir
+/home/zq/C-programe-practise/Cmake_learnning/helloworld/CMakeFiles/rebuild_cache.dir

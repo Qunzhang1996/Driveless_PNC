@@ -1,0 +1,3 @@
+/home/zq/C-programe-practise/c_learning/Project/build/CMakeFiles/SpeedManager.dir
+/home/zq/C-programe-practise/c_learning/Project/build/CMakeFiles/edit_cache.dir
+/home/zq/C-programe-practise/c_learning/Project/build/CMakeFiles/rebuild_cache.dir
