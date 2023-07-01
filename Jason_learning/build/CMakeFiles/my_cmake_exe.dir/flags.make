@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/zq/C-programe-practise/Jason_learning/include
 
-CXX_FLAGS = 
+CXX_FLAGS = -g -Wall
 

@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(SOLDER)
 include_directories(${CMAKE_SOURCE_DIR}/include)
-
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+set(CMAKE_BUILD_TYPE Debug)
 add_executable(my_cmake_exe main.cpp src/Solder.cpp src/Gun.cpp)
