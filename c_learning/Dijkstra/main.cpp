@@ -174,7 +174,7 @@ int main()
     {
         if(p.x==goal.x &&p.y==goal.y)
         {
-            cout<<"("<<p.x<<" , "<<p.y<<")"<<endl;
+            cout<<"("<<p.x<<" , "<<p.y<<")"<<endl; struct 
         }else
         {
             cout<<"("<<p.x<<" , "<<p.y<<")"<<"->";
