@@ -1,30 +1,35 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-void Sort(int Array[], int n)
-{
-    for(int i=0;i<n-1;i++)
-    {
-        int i_min=i;
-        for(int j=i+1;j<n;j++)
-        {
-            if(Array[j]<Array[i_min])
-            {
-                i_min=j;
+
+void Swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void Bubble_Sort(int Array[], int n) {
+    bool swapped;
+    for (int k = 1; k < n; k++) {
+        swapped = false;
+        for (int i = 0; i < n - k; i++) {
+            if (Array[i] > Array[i + 1]) {
+                Swap(&Array[i], &Array[i + 1]);
+                swapped = true;
             }
         }
-        int temp = Array[i];
-        Array[i] = Array[i_min];
-        Array[i_min] = temp;
+        if (!swapped) {
+            // No swaps in this iteration, array is already sorted
+            break;
+        }
     }
-};
-int main()
-{
-    int Array_ []= {2,1,4,7,5,3};
-    int n = sizeof(Array_ ) / sizeof(Array_ [0]);
-    Sort(Array_, n);
-    for(int i=0;i<n;i++)
-    {
-        cout<<Array_[i]<<endl;
+}
+
+int main() {
+    int Array_[] = {2, 4, 1, 5, 3, 7};
+    int n = sizeof(Array_) / sizeof(Array_[0]);
+    Bubble_Sort(Array_, n);
+    for (int i = 0; i < n; i++) {
+        cout << Array_[i] << endl;
     }
     return 0;
 }
