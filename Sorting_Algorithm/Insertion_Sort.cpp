@@ -6,7 +6,7 @@ void Insertion_Sort(int  array[], int n)
     {
         int value=array[i];
         int hole =i;
-        while(hole>0&&array[hole-1]>value)
+        while(hole>0&&array[hole-1]<value)
         {
             array[hole]=array[hole-1];
             hole=hole-1;
