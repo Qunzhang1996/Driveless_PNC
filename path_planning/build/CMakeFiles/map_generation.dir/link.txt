@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/map_generation.dir/src/raster_map.cpp.o -o map_generation  -lSDL2 
