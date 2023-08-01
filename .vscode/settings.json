@@ -58,5 +58,6 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/zq/C-programe-practise/Jason_learning"
 }

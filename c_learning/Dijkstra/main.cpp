@@ -75,7 +75,7 @@ vector<Point> DijkstraPathPlanning(vector<vector<int>> &gridmap, Point &start, P
     {
         // get the minium g nodes in the openlist as current search nodes
         sort(openlist.begin(), openlist.end(), NodeCompare{});
-        Node *current = *openlist.begin(); // using pointer
+        Node *current = *openlist.begin(); // 
         openlist.erase(openlist.begin());  // get current and remove it from openlist
         closelist.push_back(current);      // push_back using ptr
         // if current is the goal, get the path from the end
@@ -134,7 +134,8 @@ vector<Point> DijkstraPathPlanning(vector<vector<int>> &gridmap, Point &start, P
                     }
                     if (!inopenlist)
                     {
-                        double g = current->g + n.distance(current->point); // distance of neighbour nodes=current g+ neighbour nodes to current nodes
+                        double g = current->g + n.distance(current->point); 
+                        // distance of neighbour nodes=current g+ neighbour nodes to current nodes
                         openlist.push_back(new Node(n, g,current));
                     };
                 };

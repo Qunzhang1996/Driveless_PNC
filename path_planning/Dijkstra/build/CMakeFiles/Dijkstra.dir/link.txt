@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/Dijkstra.dir/src/main.cpp.o CMakeFiles/Dijkstra.dir/src/map_generation.cpp.o CMakeFiles/Dijkstra.dir/src/path_planning.cpp.o -o Dijkstra  -lSDL2 
