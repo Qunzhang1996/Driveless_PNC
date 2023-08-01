@@ -6,6 +6,20 @@
 namespace plt = matplotlibcpp;
 
 using namespace Eigen;
+#include <cmath> // Include the cmath header for trigonometric functions
+
+// Function to compute the continuous input signal at time t
+Vector2d continuousInputSignal(double t) {
+    double amplitude = 1.0; // Amplitude of the signal
+    double frequency = 1.0; // Frequency of the signal (in Hz)
+    double u_x = amplitude * std::sin(2 * M_PI * frequency * t);
+    double u_y = amplitude * std::cos(2 * M_PI * frequency * t);
+    
+    Vector2d input_signal;
+    input_signal << u_x, u_y;
+    return input_signal;
+}
+
 
 int main() {
     // Initialize the Kalman filter
@@ -44,15 +58,15 @@ int main() {
     double duration = 20.0; // 20 seconds
     int num_steps = static_cast<int>(duration / dt);
 
-    // Input step signal (u_k)
-    Vector2d input_signal;
-    input_signal << 1.0, 1.0; // Example: constant input signal
+    
 
     // Vectors to store true state, estimated state, and noisy measurements
     std::vector<double> time_points, true_state_x, true_state_y, estimated_state_x, estimated_state_y, noisy_x, noisy_y;
 
     // Perform Kalman filter prediction and update for each time step
     for (int i = 0; i < num_steps; ++i) {
+        // Input step signal (u_k)
+        Vector2d input_signal = continuousInputSignal(i*dt);
         // Predict the next state
         kf.predict(input_signal);
 
