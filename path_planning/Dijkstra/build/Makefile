@@ -201,6 +201,30 @@ src/path_planning.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Dijkstra.dir/build.make CMakeFiles/Dijkstra.dir/src/path_planning.cpp.s
 .PHONY : src/path_planning.cpp.s
 
+src/path_smoothing.o: src/path_smoothing.cpp.o
+.PHONY : src/path_smoothing.o
+
+# target to build an object file
+src/path_smoothing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Dijkstra.dir/build.make CMakeFiles/Dijkstra.dir/src/path_smoothing.cpp.o
+.PHONY : src/path_smoothing.cpp.o
+
+src/path_smoothing.i: src/path_smoothing.cpp.i
+.PHONY : src/path_smoothing.i
+
+# target to preprocess a source file
+src/path_smoothing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Dijkstra.dir/build.make CMakeFiles/Dijkstra.dir/src/path_smoothing.cpp.i
+.PHONY : src/path_smoothing.cpp.i
+
+src/path_smoothing.s: src/path_smoothing.cpp.s
+.PHONY : src/path_smoothing.s
+
+# target to generate assembly for a file
+src/path_smoothing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Dijkstra.dir/build.make CMakeFiles/Dijkstra.dir/src/path_smoothing.cpp.s
+.PHONY : src/path_smoothing.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... src/path_planning.o"
 	@echo "... src/path_planning.i"
 	@echo "... src/path_planning.s"
+	@echo "... src/path_smoothing.o"
+	@echo "... src/path_smoothing.i"
+	@echo "... src/path_smoothing.s"
 .PHONY : help
 
 

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Dijkstra.dir/src/map_generation.cpp.o.d"
   "CMakeFiles/Dijkstra.dir/src/path_planning.cpp.o"
   "CMakeFiles/Dijkstra.dir/src/path_planning.cpp.o.d"
+  "CMakeFiles/Dijkstra.dir/src/path_smoothing.cpp.o"
+  "CMakeFiles/Dijkstra.dir/src/path_smoothing.cpp.o.d"
   "Dijkstra"
   "Dijkstra.pdb"
 )

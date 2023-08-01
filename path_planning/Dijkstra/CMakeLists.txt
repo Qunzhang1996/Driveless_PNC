@@ -15,6 +15,7 @@ set(SOURCES
     src/main.cpp
     src/map_generation.cpp
     src/path_planning.cpp
+    src/path_smoothing.cpp
 )
 
 # Create the executable target

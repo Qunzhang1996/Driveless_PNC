@@ -3,6 +3,8 @@
 #include <SDL2/SDL.h>
 #include "map_generation.h"
 #include "path_planning.h"
+#include<cmath>
+#include "path_smoothing.h"
 
 // Define the dimensions of the map
 
@@ -48,13 +50,14 @@ void renderMap(const std::vector<std::vector<int>>& rasterMap, const std::vector
     SDL_Quit();
 }
 
+
 int main() {
     std::vector<std::vector<int>> rasterMap(mapHeight, std::vector<int>(mapWidth, 0));
     generateMap(rasterMap);
 
     int startX = 0;
     int startY = 0;
-    int targetX = mapWidth-30; // coordinates should be within the map bounds
+    int targetX = mapWidth-20; // coordinates should be within the map bounds
     int targetY = mapHeight-80;
 
     Point start(startX, startY);
@@ -69,8 +72,13 @@ int main() {
         std::cout << "Shortest distance to the target: " << path.size() - 1 << std::endl;
     }
 
-    // Render the map with the path
-    renderMap(rasterMap, path);
+    // Smooth the path
+     std::vector<Point> smoothedPath = bezierCurveInterpolation(path);
+
+
+    // Render the map with the smoothed path
+    renderMap(rasterMap, smoothedPath);
+
 
     return 0;
 }

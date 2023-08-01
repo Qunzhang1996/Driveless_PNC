@@ -265,4 +265,6 @@ CMakeFiles/Dijkstra.dir/src/main.cpp.o: \
  /usr/include/c++/9/bits/shared_ptr_atomic.h \
  /usr/include/c++/9/bits/atomic_base.h \
  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
- /usr/include/c++/9/backward/auto_ptr.h
+ /usr/include/c++/9/backward/auto_ptr.h \
+ /home/zq/C-programe-practise/path_planning/Dijkstra/include/path_smoothing.h \
+ /home/zq/C-programe-practise/path_planning/Dijkstra/include/path_planning.h
