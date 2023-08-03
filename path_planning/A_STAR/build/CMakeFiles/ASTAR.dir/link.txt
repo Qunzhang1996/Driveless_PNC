@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/ASTAR.dir/src/main.cpp.o CMakeFiles/ASTAR.dir/src/map_generation.cpp.o CMakeFiles/ASTAR.dir/src/path_planning.cpp.o CMakeFiles/ASTAR.dir/src/path_smoothing.cpp.o -o ASTAR  -lSDL2 
