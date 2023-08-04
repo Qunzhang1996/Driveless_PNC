@@ -1,7 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.spatial import distance
-from matplotlib.patches import Rectangle
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import time
 
 class Node:
     def __init__(self, position, parent=None, cost=0.0):
@@ -31,17 +32,21 @@ class RRTStar:
             self.nodes.append(new_node)
             self.rewire(new_node, near_nodes)
 
-            if not self.goal_reached and distance.euclidean(new_node.position, self.goal.position) < self.step_size:
-                self.goal.parent = new_node
-                self.nodes.append(self.goal)
-                self.goal_reached = True
+            if distance.euclidean(new_node.position, self.goal.position) < self.step_size:
+                potential_goal_cost = new_node.cost + distance.euclidean(new_node.position, self.goal.position)
+                if not self.goal_reached or potential_goal_cost < self.goal.cost:
+                    self.goal.parent = new_node
+                    self.goal.cost = potential_goal_cost
+                    self.goal_reached = True
 
             return new_node
 
         return None
 
+
+
     def get_random_point(self):
-        if np.random.rand() < 0.05:  # 5% chance to sample the goal
+        if np.random.rand() < 0.05:
             return self.goal.position
         return [np.random.uniform(0, self.field_dim[i]) for i in range(2)]
 
@@ -51,81 +56,61 @@ class RRTStar:
     def get_new_node(self, nearest_node, random_point):
         direction_vector = [random_point[i] - nearest_node.position[i] for i in range(2)]
         dist = distance.euclidean(random_point, nearest_node.position)
+        
+        if dist == 0:
+            return None
 
         step_vector = [self.step_size * direction_vector[i] / dist for i in range(2)]
         new_position = [nearest_node.position[i] + step_vector[i] for i in range(2)]
-
         return Node(new_position, nearest_node, nearest_node.cost + self.step_size)
+
 
     def check_collision(self, node):
         for obs in self.obstacles:
             if obs[0] < node.position[0] < obs[0] + obs[2] and obs[1] < node.position[1] < obs[1] + obs[3]:
                 return True
-
         return False
 
-    def get_near_nodes(self, node):
-        return [near_node for near_node in self.nodes if distance.euclidean(near_node.position, node.position) <= self.search_radius]
+    def get_near_nodes(self, new_node):
+        return [node for node in self.nodes if distance.euclidean(node.position, new_node.position) < self.search_radius]
 
     def choose_parent(self, new_node, near_nodes):
         if not near_nodes:
             return new_node
 
-        costs = []
-        for near_node in near_nodes:
-            if self.check_collision(Node(near_node.position, new_node)):
-                continue
-            costs.append(near_node.cost + distance.euclidean(near_node.position, new_node.position))
-
-        if not costs:
-            return new_node
-
-        min_cost = min(costs)
-        min_index = costs.index(min_cost)
-
-        new_node.cost = min_cost
-        new_node.parent = near_nodes[min_index]
+        cheapest_node = min(near_nodes, key=lambda node: node.cost + distance.euclidean(node.position, new_node.position))
+        new_node.cost = cheapest_node.cost + distance.euclidean(cheapest_node.position, new_node.position)
+        new_node.parent = cheapest_node
 
         return new_node
 
     def rewire(self, new_node, near_nodes):
-        for near_node in near_nodes:
-            no_collision = not self.check_collision(Node(near_node.position, new_node))
-
-            if new_node.cost + distance.euclidean(new_node.position, near_node.position) < near_node.cost and no_collision:
-                near_node.parent = new_node
-                near_node.cost = new_node.cost + distance.euclidean(new_node.position, near_node.position)
-
-    def trace_path(self):
-        node = self.goal
-        path = []
-        while node:
-            path.append(node)
-            node = node.parent
-        return path
+        for node in near_nodes:
+            if new_node.cost + distance.euclidean(new_node.position, node.position) < node.cost:
+                node.parent = new_node
+                node.cost = new_node.cost + distance.euclidean(new_node.position, node.position)
 
     def plot(self, ax):
         ax.clear()
-        ax.set_xlim([0, self.field_dim[0]])
-        ax.set_ylim([0, self.field_dim[1]])
-
-        for obs in self.obstacles:
-            ax.add_patch(Rectangle((obs[0], obs[1]), obs[2], obs[3], color='gray'))
 
         for node in self.nodes:
             if node.parent:
-                ax.plot(*zip(*[node.parent.position, node.position]), 'ro-')
+                ax.plot([node.position[0], node.parent.position[0]], [node.position[1], node.parent.position[1]], 'b-', lw=0.5)
+
+        for obs in self.obstacles:
+            ax.add_patch(patches.Rectangle((obs[0], obs[1]), obs[2], obs[3], edgecolor='r', facecolor='r'))
 
         if self.goal_reached:
-            path = self.trace_path()
-            for node in path:
-                if node.parent:
-                    ax.plot(*zip(*[node.parent.position, node.position]), 'go-')
+            node = self.goal
+            while node.parent is not None:
+                ax.plot([node.position[0], node.parent.position[0]], [node.position[1], node.parent.position[1]], 'g-', lw=2.0)
+                node = node.parent
 
-        ax.plot(*self.start.position, 'go')
-        ax.plot(*self.goal.position, 'bo')
-
-        plt.draw()
+        ax.plot(self.start.position[0], self.start.position[1], 'go', markersize=10)
+        ax.plot(self.goal.position[0], self.goal.position[1], 'ro', markersize=10)
+        plt.xlim(0, self.field_dim[0])
+        plt.ylim(0, self.field_dim[1])
+        plt.grid(True)
         plt.pause(0.01)
 
 if __name__ == "__main__":
@@ -134,7 +119,10 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots()
 
-    for _ in range(5000):
+    start_time = time.time()
+    max_duration = 100  # maximum duration in seconds
+
+    while time.time() - start_time < max_duration:
         rrt_star.step()
         rrt_star.plot(ax)
 
