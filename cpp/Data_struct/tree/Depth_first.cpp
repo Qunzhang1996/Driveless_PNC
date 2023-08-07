@@ -32,7 +32,7 @@ void Inorder(Node* root){
     
 }
 
-void PosorderNode* root){
+void Posorder(Node* root){
     if(root==nullptr) return;
     
     Posorder(root->left);
