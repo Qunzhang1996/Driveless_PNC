@@ -1,0 +1,8 @@
+prefix=/home/zq/C-programe-practise/motion_planning/hw_2/ros_task/devel
+
+Name: grid_path_searcher
+Description: Description of grid_path_searcher
+Version: 0.0.1
+Cflags: -I/home/zq/C-programe-practise/motion_planning/hw_2/ros_task/src/grid_path_searcher/include
+Libs: -L${prefix}/lib 
+Requires: 
