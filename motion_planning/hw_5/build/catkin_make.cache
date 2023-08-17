@@ -1,0 +1,2 @@
+.
+-DCATKIN_DEVEL_PREFIX=/home/zq/C-programe-practise/motion_planning/hw_5/devel -DCMAKE_INSTALL_PREFIX=/home/zq/C-programe-practise/motion_planning/hw_5/install -G Unix Makefiles
