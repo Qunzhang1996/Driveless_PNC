@@ -1,5 +1,6 @@
 #include<iostream>
 #include<Eigen/Dense>
+#include <random>
 using namespace std;
 /*
 A=[0 1 0 0;0 0 0 0;0 0 0 1;0 0 0 0];
@@ -24,26 +25,47 @@ lqr gain
     2.7623    2.5075    0.0000    0.0000
     0.0000    0.0000    2.7623    2.5075
 */
-class Vehicle{
+class Vehicle {
 private:
     Eigen::MatrixXd Ad;
     Eigen::MatrixXd Bd;
-    // Eigen::Vector2d &input;
+    Eigen::Matrix4d Cd=Eigen::Matrix4d::Identity();
     double mass;
+    double generateGaussianNoise(double standard_deviation) const {
+        std::random_device rd{};
+        std::mt19937 gen{rd()};
+        std::normal_distribution<> d{0, standard_deviation};
+        return d(gen);
+    }
+
+    Eigen::Vector4d getGaussianNoiseVector() const {
+        Eigen::Vector4d noise;
+        noise << generateGaussianNoise(1),  // Noise for position in X
+                 generateGaussianNoise(0.5), // Noise for velocity in X
+                 generateGaussianNoise(1),  // Noise for position in Y
+                 generateGaussianNoise(0.5); // Noise for velocity in Y
+        return noise;
+    }
+
 public:
     Eigen::Vector4d states;
+    Eigen::Vector4d measurement;
     Vehicle(const Eigen::MatrixXd &Ad, const Eigen::MatrixXd &Bd, double mass) : 
-    Ad(Ad), Bd(Bd), mass(mass) {states = Eigen::Vector4d::Zero();};
+    Ad(Ad), Bd(Bd), mass(mass) {
+        states = Eigen::Vector4d::Zero();
+    }
 
     void applyForce(Eigen::Vector2d &input) {
-        states=Ad*states+Bd*input;  
+        measurement=Cd*states+getGaussianNoiseVector();
+        states = Ad * states + Bd * input + getGaussianNoiseVector();
+        
     }
-    // Getter methods to retrieve positions and velocities
-    double getXPos() const { return states(0); }
-    double getYPos() const { return states(2); }
-    double getXVel() const { return states(1); }
-    double getYVel() const { return states(3); }
+    double getXPos() const { return measurement(0); }
+    double getYPos() const { return measurement(2); }
+    double getXVel() const { return measurement(1); }
+    double getYVel() const { return measurement(3); }
 };
+
 Eigen::Vector2d LQR_controller(const Vehicle& vehicle, const Eigen::MatrixXd& K, double setPointX, double setPointY) 
 {
     Eigen::Vector4d ref;
