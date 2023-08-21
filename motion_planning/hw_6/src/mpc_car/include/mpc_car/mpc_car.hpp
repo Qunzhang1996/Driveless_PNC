@@ -75,25 +75,25 @@ class MpcCar {
     // x_{k+1} = Ad * x_{k} + Bd * u_k + gd
     // TODO: set values to Ad_, Bd_, gd_
     // ...
-    MatrixA Ac_;
-    Ac_<< 0,0,-v*sin(phi),cos(phi),
+    // MatrixA Ac_;
+    Ad_<< 0,0,-v*sin(phi),cos(phi),
           0,0, v*cos(phi),sin(phi),
           0,0,   0       ,tan(delta)/ll_,
           0,0,   0       ,0;
-    MatrixA Identity_matrix= MatrixA::Identity();
-    Ad_=Identity_matrix+dt_*Ac_;
-    MatrixB Bc_;
-    Bc_<< 0, 0,
+    // MatrixA Identity_matrix= MatrixA::Identity();
+    Ad_=MatrixA::Identity()+dt_*Ad_;
+    // MatrixB Bc_;
+    Bd_<< 0, 0,
           0, 0,
-          0,v/ll_/(pow(cos(delta),2)),
+          0,v/(ll_*pow(cos(delta),2)),
           1, 1;
-    Bd_=dt_*Bc_;
-    VectorG gc_;
-    gc_<< v*phi*sin(phi),
+    Bd_=dt_*Bd_;
+    // VectorG gc_;
+    gd_<< v*phi*sin(phi),
           -v*phi*cos(phi),
-          0,
-          -v*delta/ll_/(pow(cos(delta),2));
-    gd_=dt_*gc_;
+          -v*delta/(ll_*pow(cos(delta),2)),
+          0;
+    gd_=dt_*gd_;
     return;
   }
 
@@ -207,10 +207,10 @@ class MpcCar {
       lu_.coeffRef(i * 3 + 1, 0) = -delta_max_;
       uu_.coeffRef(i * 3 + 1, 0) = delta_max_;
 
-      if(i!=0) Cu_.coeffRef(i * 3 + 2, i * m+1-m) = 1/dt_;
-      Cu_.coeffRef(i * 3 + 2, i * m + 1) = 1/dt_;
-      lu_.coeffRef(i * 3 + 2, 0) = -ddelta_max_;
-      uu_.coeffRef(i * 3 + 2, 0) = ddelta_max_;
+      if(i!=0) {Cu_.coeffRef(i * 3 + 2, i * m+1-m) = -1;}
+      Cu_.coeffRef(i * 3 + 2, i * m + 1) = 1;
+      lu_.coeffRef(i * 3 + 2, 0) = -dt_*ddelta_max_;
+      uu_.coeffRef(i * 3 + 2, 0) = dt_*ddelta_max_;
       // ...
 
       // TODO: set stage constraints of states (v)
@@ -218,6 +218,9 @@ class MpcCar {
       // Cx_.coeffRef( ...
       // lx_.coeffRef( ...
       // ux_.coeffRef( ...
+      Cx_.coeffRef(i, i * n + 3) = 1;
+      lx_.coeffRef(i, 0) = -v_max_;
+      ux_.coeffRef(i, 0) = v_max_;
     }
     // set predict mats size
     predictState_.resize(N_);
@@ -273,13 +276,13 @@ class MpcCar {
       } else {
         // TODO: set BB AA gg
         // ...
-        AA.block(4*i,4*i,n,n)=Ad_.pow(i+1);
-        for(int j = 0; j < N_; ++j)
+        AA.block(n*i,0,n,n)=Ad_*AA.block(n*(i-1),0,n,n);
+        gg.block(n * i, 0, n, 1) = Ad_ * gg.block(n * (i - 1), 0, n, 1) + gd_;
+        BB.block(n*i,m*i,n,m)=Bd_;
+        for(int j = i-1; j >=0; --j)
         {
-          if(j<=i)
-          {
-            BB.block(n*i, m*j, n, m) = Ad_.pow(i-j)*Bd_;
-          }
+          BB.block(n*i, m*j, n, m) = Ad_*BB.block(n*(i-1), m*j, n, m);
+
         }
       }
       // TODO: set qx
@@ -294,8 +297,16 @@ class MpcCar {
        *           \  xN  /        \  xN  /         \  xN  /
        * */
 
-      // qx.coeffRef(...
+      qx.coeffRef(n*i,0)=-Qx_.coeffRef(n*i,n*i)*xy(0);
+      qx.coeffRef(n*i+1,0)=-Qx_.coeffRef(n*i+1,n*i+1)*xy(1);
+      qx.coeffRef(n*i+2,0)=-Qx_.coeffRef(n*i+2,n*i+2)*phi;
+      qx.coeffRef(n*i+3,0)=0;
+      if(i==N_-1)
+      {
+        qx.coeffRef(i * n + 3, 0) = -1;
+      };
       // ...
+      // qx=-Qx_*x
       s0 += desired_v_ * dt_;
       s0 = s0 < s_.arcL() ? s0 : s_.arcL();
     }
