@@ -42,6 +42,9 @@ vector<A_star::Point> A_star::find_path(Point& start, Point& end, vector<vector<
 {
     vector<Node*>openlist;
     vector<Node*>closelist;
+    return neighbour_nodes;
+};
+doubl
     vector<Point>path;
     double n =calculate_distance(start,end);
     Node* current=new Node(start, 0, n, n,nullptr);
@@ -49,12 +52,10 @@ vector<A_star::Point> A_star::find_path(Point& start, Point& end, vector<vector<
     openlist.push_back(current);
     while (!openlist.empty())
     {
-        sort(openlist.begin(),openlist.end(),NodeComparison());
-        current=*openlist.begin();
-        openlist.erase(openlist.begin());
-        closelist.push_back(current);
-        if(current->point.x==end.x&&current->point.y==end.y)
-        {
+        sort(openlist.begin(),openlist.end()onatiner
+    return neighbour_nodes;
+};
+doubl
             Node* terminal=current;
             while(terminal->parent!=nullptr)
             {

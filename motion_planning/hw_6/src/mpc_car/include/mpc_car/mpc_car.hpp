@@ -233,6 +233,7 @@ class MpcCar {
     }
   }
 
+
   int solveQP(const VectorX& x0_observe) {
     x0_observe_ = x0_observe;
     historyInput_.pop_front();
