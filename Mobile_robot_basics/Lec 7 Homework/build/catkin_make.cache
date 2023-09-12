@@ -1,0 +1,2 @@
+
+-DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.7m -DCATKIN_DEVEL_PREFIX=/home/zq/C-programe-practise/Mobile_robot_basics/Lec 7 Homework/devel -DCMAKE_INSTALL_PREFIX=/home/zq/C-programe-practise/Mobile_robot_basics/Lec 7 Homework/install -G Unix Makefiles
