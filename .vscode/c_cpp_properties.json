@@ -14,7 +14,8 @@
                 "/opt/ros/noetic/include/**",
                 "/usr/include/eigen3/**",
                 "/home/zq/C-programe-practise/motion_planning/hw_6/src/mpc_car/include",
-                "/home/zq/C-programe-practise/motion_planning/hw_6/src/car_msgs"
+                "/home/zq/C-programe-practise/motion_planning/hw_6/src/car_msgs",
+                "/home/zq/C-programe-practise/motion_planning/Project/src/src"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
