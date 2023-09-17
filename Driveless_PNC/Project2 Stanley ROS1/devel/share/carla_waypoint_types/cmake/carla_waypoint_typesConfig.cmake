@@ -1,0 +1,1 @@
+/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/carla_waypoint_types/share/carla_waypoint_types/cmake/carla_waypoint_typesConfig.cmake

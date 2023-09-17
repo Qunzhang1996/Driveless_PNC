@@ -1,0 +1,8 @@
+prefix=/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/stanley_control
+
+Name: stanley_control
+Description: Description of stanley_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -lserial_communication
+Requires: geometry_msgs roscpp rospy sensor_msgs std_msgs tf carla_msgs nav_msgs

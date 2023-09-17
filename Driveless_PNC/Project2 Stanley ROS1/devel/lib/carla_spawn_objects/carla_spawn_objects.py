@@ -1,0 +1,1 @@
+/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/carla_spawn_objects/lib/carla_spawn_objects/carla_spawn_objects.py

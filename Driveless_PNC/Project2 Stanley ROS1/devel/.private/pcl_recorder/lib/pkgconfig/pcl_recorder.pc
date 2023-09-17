@@ -1,0 +1,8 @@
+prefix=/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/pcl_recorder
+
+Name: pcl_recorder
+Description: Description of pcl_recorder
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
