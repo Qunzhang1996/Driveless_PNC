@@ -1,21 +1,9 @@
 {
-    "python.autoComplete.extraPaths": [
-        "/opt/ros/noetic/lib/python3/dist-packages",
-        "",
-        "/home/qrq/Documents/Carla_0913/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg",
-        "/home/qrq/Documents/Carla_0913/PythonAPI/carla"
-    ],
-    "python.analysis.extraPaths": [
-        "/home/zq/C-programe-practise/Driveless_PNC/Lecture_Files/Project1 PID ROS1/Project_1_PID_ROS1/devel/lib/python3/dist-packages",
-        "/home/zq/catkin_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages",
-        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg",
-        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla"
-    ],
     "files.associations": {
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
+        "csetjmp": "cpp",
         "csignal": "cpp",
         "cstdarg": "cpp",
         "cstddef": "cpp",
@@ -27,11 +15,14 @@
         "cwctype": "cpp",
         "array": "cpp",
         "atomic": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
         "strstream": "cpp",
         "bit": "cpp",
         "*.tcc": "cpp",
         "bitset": "cpp",
         "chrono": "cpp",
+        "codecvt": "cpp",
         "complex": "cpp",
         "condition_variable": "cpp",
         "cstdint": "cpp",
@@ -53,15 +44,15 @@
         "optional": "cpp",
         "random": "cpp",
         "ratio": "cpp",
+        "regex": "cpp",
         "string": "cpp",
         "string_view": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
-        "hash_map": "cpp",
-        "hash_set": "cpp",
         "fstream": "cpp",
+        "future": "cpp",
         "initializer_list": "cpp",
         "iomanip": "cpp",
         "iosfwd": "cpp",
@@ -80,6 +71,7 @@
         "cinttypes": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
+        "valarray": "cpp",
         "variant": "cpp"
     }
 }

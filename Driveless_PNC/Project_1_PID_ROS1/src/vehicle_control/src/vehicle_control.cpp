@@ -67,7 +67,7 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
   {
     vehicle_state_.start_point_x = msg->pose.pose.position.x;
     vehicle_state_.start_point_x = msg->pose.pose.position.x;
-    //vehicle_state_.start_heading = vehicle_state_.yaw;
+    //vehicle_state_.start_heading = vehicle_state_.yaw;std::cout<<"this is a test"<<std::endl;
     vehicle_state_.start_heading = -M_PI / 2;
     first_record_ = false;
   }
@@ -156,10 +156,10 @@ int main(int argc, char** argv)
     planning_published_trajectory.trajectory_points.push_back(trajectory_pt);
   }
 
-  // 简单规划下到终点时的速度
+  // 简单规划下到终点时的速度n
   double v_temp = 0.0;
 
-  for (size_t i = headings.size(); i > headings.size() - 5; i--)
+  for (size_t i = headings.size()-1; i > headings.size() - 5; i--)
   {
     planning_published_trajectory.trajectory_points[i].v = v_temp;
   }
@@ -225,7 +225,7 @@ int main(int argc, char** argv)
     control_cmd.steer = steer_cmd;
     
     // 发布控制指令
-    control_pub.publish(control_cmd);trajectory_points_
+    control_pub.publish(control_cmd);trajectory_points_;
     ros::spinOnce();
     loop_rate.sleep();  // 设置程序循环的周期是100/s
     cnt++;
