@@ -1,0 +1,15 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "",
+        "/home/qrq/Documents/Carla_0913/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg",
+        "/home/qrq/Documents/Carla_0913/PythonAPI/carla"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/zq/C-programe-practise/Driveless_PNC/Lecture_Files/Project1 PID ROS1/Project_1_PID_ROS1/devel/lib/python3/dist-packages",
+        "/home/zq/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg",
+        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla"
+    ]
+}

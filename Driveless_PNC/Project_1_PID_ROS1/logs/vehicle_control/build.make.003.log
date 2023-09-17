@@ -1,0 +1,5 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/vehicle_control.dir/src/vehicle_control.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/vehicle_control.dir/src/pid_controller.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/vehicle_control.dir/src/reference_line.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/zq/C-programe-practise/Driveless_PNC/Project_1_PID_ROS1/devel/.private/vehicle_control/lib/vehicle_control/vehicle_control[0m
+[100%] Built target vehicle_control
