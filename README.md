@@ -7,6 +7,11 @@ ShenLan Driveless Control and Planning (ROS+CARLA) Project(Cpp)
 3.TBD  
 ## Motion_Planning
 ShenLan Mobile Robot Motion Planning Project (More related to the Drone, Cpp)    
+1.A*  
+2.RRT*(TBD)  
+3.BVIP(Optimal Control)  
+4.Optimal Trajectory  
+5.MPC for Kinematic Vehicle Motion  
 Details for MPC(Matlab) Check https://github.com/Qunzhang1996/SSY281MPC.git   
 Details for RTOS and LQR C-code, Check https://github.com/Qunzhang1996/SSY191Model_based_development_of_cyber_physical_systems.git  
 ## Mobile_Robot_Basics
