@@ -40,7 +40,11 @@ void StanleyController::ComputeControlCmd(
 void StanleyController::ComputeLateralErrors(const double x, const double y,
                                              const double theta, double &e_y,
                                              double &e_theta) {
-
+    TrajectoryPoint target_point_=QueryNearestPointByPosition(x,y);
+    double dx=x-target_point_.x;
+    double dy=y-target_point_.y;
+    e_y=-dx*sin(target_point_.heading)+dy*sin(target_point_.heading);
+    e_theta=theta-target_point_.heading;
 }
 
 TrajectoryPoint StanleyController::QueryNearestPointByPosition(const double x,
