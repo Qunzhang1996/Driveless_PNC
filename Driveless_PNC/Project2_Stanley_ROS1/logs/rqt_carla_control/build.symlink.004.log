@@ -1,0 +1,25 @@
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/pkgconfig/rqt_carla_control.pc
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/python3/dist-packages/rqt_carla_control/__init__.py
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/rqt_carla_control/cmake.lock
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/rqt_carla_control/rqt_carla_control.py
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/share/rqt_carla_control/cmake/rqt_carla_controlConfig.cmake
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/share/rqt_carla_control/cmake/rqt_carla_controlConfig-version.cmake
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/cmake.lock, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/./cmake.lock)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/lib/pkgconfig/rqt_carla_control.pc, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/pkgconfig/rqt_carla_control.pc)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/lib/python3/dist-packages/rqt_carla_control/__init__.py, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/python3/dist-packages/rqt_carla_control/__init__.py)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/lib/rqt_carla_control/cmake.lock, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/rqt_carla_control/cmake.lock)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/lib/rqt_carla_control/rqt_carla_control.py, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/rqt_carla_control/rqt_carla_control.py)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/share/rqt_carla_control/cmake/rqt_carla_controlConfig.cmake, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/share/rqt_carla_control/cmake/rqt_carla_controlConfig.cmake)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/rqt_carla_control/share/rqt_carla_control/cmake/rqt_carla_controlConfig-version.cmake, /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/share/rqt_carla_control/cmake/rqt_carla_controlConfig-version.cmake)
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/pkgconfig/rqt_carla_control.pc
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/python3/dist-packages/rqt_carla_control/__init__.py
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/rqt_carla_control/cmake.lock
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/rqt_carla_control/rqt_carla_control.py
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/share/rqt_carla_control/cmake/rqt_carla_controlConfig.cmake
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/share/rqt_carla_control/cmake/rqt_carla_controlConfig-version.cmake
+Already unlinked: {}

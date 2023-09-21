@@ -1,6 +1,0 @@
-[ 20%] [32mBuilding CXX object CMakeFiles/stanley_control.dir/src/main.cpp.o[0m
-[ 40%] [32mBuilding CXX object CMakeFiles/stanley_control.dir/src/stanley_control.cpp.o[0m
-[ 60%] [32mBuilding CXX object CMakeFiles/stanley_control.dir/src/reference_line.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/stanley_control.dir/src/pid_controller.cpp.o[0m
-[100%] [32m[1mLinking CXX executable "/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/stanley_control/lib/stanley_control/stanley_control"[0m
-[100%] Built target stanley_control

@@ -1,0 +1,8 @@
+prefix=/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/ros_compatibility
+
+Name: ros_compatibility
+Description: Description of ros_compatibility
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy

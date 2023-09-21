@@ -1,1 +1,0 @@
-/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/carla_ad_demo/share/carla_ad_demo/cmake/carla_ad_demoConfig-version.cmake

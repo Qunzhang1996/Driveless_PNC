@@ -1,1 +1,0 @@
-/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/.private/carla_manual_control/share/carla_manual_control/cmake/carla_manual_controlConfig.cmake

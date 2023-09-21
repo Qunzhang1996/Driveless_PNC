@@ -1,0 +1,19 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/python3/dist-packages",
+        "/home/zq/carla-ros-bridge/catkin_ws/devel/lib/python3/dist-packages",
+        "/home/zq/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg",
+        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/devel/lib/python3/dist-packages",
+        "/home/zq/carla-ros-bridge/catkin_ws/devel/lib/python3/dist-packages",
+        "/home/zq/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg",
+        "/home/zq/C-programe-practise/Driveless_PNC/CARLA_0.9.13/PythonAPI/carla"
+    ],
+    "cmake.sourceDirectory": "/home/zq/C-programe-practise/Driveless_PNC/Project2 Stanley ROS1/src/carla-ros-bridge/carla_ros_scenario_runner_types"
+}

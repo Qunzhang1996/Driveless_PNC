@@ -1,0 +1,8 @@
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/src/stanley_control/src/stanley_control.cpp:[m[K In member function ‘[01m[Kvoid shenlan::control::StanleyController::ComputeControlCmd(const VehicleState&, const TrajectoryData&, ControlCmd&)[m[K’:
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/src/stanley_control/src/stanley_control.cpp:43:64:[m[K [01;31m[Kerror: [m[K‘[01m[KSTEER_LIMIT[m[K’ was not declared in this scope
+   43 |         cmd.steer_target = std::max(std::min(cmd.steer_target, [01;31m[KSTEER_LIMIT[m[K), -STEER_LIMIT);  // Clamp to permissible range
+      |                                                                [01;31m[K^~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/stanley_control.dir/build.make:90: CMakeFiles/stanley_control.dir/src/stanley_control.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:1888: CMakeFiles/stanley_control.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
