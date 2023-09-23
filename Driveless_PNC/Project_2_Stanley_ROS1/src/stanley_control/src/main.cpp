@@ -67,7 +67,7 @@ int main(int argc, char** argv) {
   // Read the reference_line txt
   std::ifstream infile;
   infile.open(
-      "/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/src/stanley_control/data/referenceline_2d_mod.txt");  //将文件流对象与文件连接起来
+      "/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/src/stanley_control/data/cube_town_reference_line.txt");  //将文件流对象与文件连接起来
   assert(infile.is_open());  //若失败,则输出错误消息,并终止程序运行
 
   std::vector<std::pair<double, double>> xy_points;

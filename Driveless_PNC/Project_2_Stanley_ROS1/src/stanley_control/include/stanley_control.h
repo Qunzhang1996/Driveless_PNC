@@ -14,7 +14,6 @@ namespace shenlan {
 namespace control {
 
 using Matrix = Eigen::MatrixXd;
-
 class StanleyController {
  public:
   StanleyController(){};
@@ -33,7 +32,7 @@ class StanleyController {
   double k_y_ = 0.0;
   double u_min_ = 0.0;
   double u_max_ = 100.0;
-
+  const double EPSILON = 0.01;  // Small constant, you can adjust this based on your needs.
   double theta_ref_;
   double theta_0_;
 };

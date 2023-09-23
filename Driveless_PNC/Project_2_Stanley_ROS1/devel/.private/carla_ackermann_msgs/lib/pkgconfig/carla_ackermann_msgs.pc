@@ -1,8 +1,8 @@
-prefix=/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_ackermann_msgs
+prefix=/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/.private/carla_ackermann_msgs
 
 Name: carla_ackermann_msgs
 Description: Description of carla_ackermann_msgs
 Version: 1.0.0
-Cflags: -I/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_ackermann_msgs/include
+Cflags: -I/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/.private/carla_ackermann_msgs/include
 Libs: -L${prefix}/lib 
 Requires: message_runtime std_msgs carla_msgs

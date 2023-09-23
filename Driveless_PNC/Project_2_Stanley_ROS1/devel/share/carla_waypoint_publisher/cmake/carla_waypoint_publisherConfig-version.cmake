@@ -1,1 +1,1 @@
-/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_waypoint_publisher/share/carla_waypoint_publisher/cmake/carla_waypoint_publisherConfig-version.cmake
+/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/.private/carla_waypoint_publisher/share/carla_waypoint_publisher/cmake/carla_waypoint_publisherConfig-version.cmake

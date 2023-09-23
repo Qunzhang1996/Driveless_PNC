@@ -1,0 +1,25 @@
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/lib/pkgconfig/carla_walker_agent.pc
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/lib/python3/dist-packages/carla_walker_agent/__init__.py
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/lib/carla_walker_agent/cmake.lock
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/lib/carla_walker_agent/carla_walker_agent.py
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/share/carla_walker_agent/cmake/carla_walker_agentConfig-version.cmake
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/share/carla_walker_agent/cmake/carla_walker_agentConfig.cmake
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/cmake.lock, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/./cmake.lock)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/lib/pkgconfig/carla_walker_agent.pc, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/pkgconfig/carla_walker_agent.pc)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/lib/python3/dist-packages/carla_walker_agent/__init__.py, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/python3/dist-packages/carla_walker_agent/__init__.py)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/lib/carla_walker_agent/cmake.lock, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/carla_walker_agent/cmake.lock)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/lib/carla_walker_agent/carla_walker_agent.py, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/carla_walker_agent/carla_walker_agent.py)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/share/carla_walker_agent/cmake/carla_walker_agentConfig-version.cmake, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/share/carla_walker_agent/cmake/carla_walker_agentConfig-version.cmake)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/.private/carla_walker_agent/share/carla_walker_agent/cmake/carla_walker_agentConfig.cmake, /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/share/carla_walker_agent/cmake/carla_walker_agentConfig.cmake)
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/pkgconfig/carla_walker_agent.pc
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/python3/dist-packages/carla_walker_agent/__init__.py
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/carla_walker_agent/cmake.lock
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/lib/carla_walker_agent/carla_walker_agent.py
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/share/carla_walker_agent/cmake/carla_walker_agentConfig-version.cmake
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project2_Stanley_ROS1/devel/share/carla_walker_agent/cmake/carla_walker_agentConfig.cmake
+Already unlinked: {}

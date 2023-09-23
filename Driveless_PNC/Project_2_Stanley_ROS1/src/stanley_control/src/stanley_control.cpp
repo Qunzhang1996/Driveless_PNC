@@ -40,7 +40,7 @@ void StanleyController::ComputeControlCmd(
     if(vehicle_state.velocity == 0) {
         cmd.steer_target = 0;  // Handle the stationary case to avoid division by zero.
     } else {
-        cmd.steer_target = e_theta + atan2(k_y_ * e_y, vehicle_state.velocity);
+        cmd.steer_target = e_theta + atan2(k_y_ * e_y, vehicle_state.velocity+EPSILON);
     }
 
 }
