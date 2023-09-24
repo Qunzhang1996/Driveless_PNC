@@ -4,8 +4,9 @@ contains somethings used to learn Data Structure and Algorithm, GDB and CMakeLis
 ShenLan Driveless Control and Planning (ROS+CARLA) Project(Cpp)  
 1.PID Controller  
 2.Stanley Controller  
-3.Trajectory Track(LQR)  
-4.TBD  
+3.Trajectory Track(LQR)    
+4.MPC Controller  
+5.TBD  
 ## Motion_Planning_For_Mobile_Robot
 ShenLan Mobile Robot Motion Planning Project (More related to the Drone, Cpp)    
 1.A*  
