@@ -136,6 +136,7 @@ bool LqrController::ComputeControlCommand(
     const TrajectoryData &planning_published_trajectory, ControlCmd &cmd) {
   // 规划轨迹
   trajectory_points_ = planning_published_trajectory.trajectory_points;
+  
   /*
   A matrix (Gear Drive)
   [0.0, 1.0, 0.0, 0.0;
@@ -145,18 +146,22 @@ bool LqrController::ComputeControlCommand(
   0.0, ((lr * cr - lf * cf) / i_z) / v, (l_f * c_f - l_r * c_r) / i_z,
   (-1.0 * (l_f^2 * c_f + l_r^2 * c_r) / i_z) / v;]
   */
-
   // to-do 01 配置状态矩阵A
+  // Eigen::Matrix4d Matrix_A=Matrix::Zero(basic_state_size_, basic_state_size_);
+  
 
   /*
   b = [0.0, c_f / m, 0.0, l_f * c_f / i_z]^T
   */
+  
   // to-do 02 动力矩阵B
+  matrix_b_=matrix_b_;
+  matrix_bd_=matrix_b_*ts_;
 
   // cout << "matrix_bd_.row(): " << matrix_bd_.rows() << endl;
   //  cout << "matrix_bd_.col(): " << matrix_bd_.cols() << endl;
   //  Update state = [Lateral Error, Lateral Error Rate, Heading Error, Heading
-  //  Error Rate]
+  //  Error Rate]LqrController
 
   // to-do 03 计算横向误差并且更新状态向量x
   UpdateState(localization);
@@ -208,7 +213,15 @@ void LqrController::UpdateState(const VehicleState &vehicle_state) {
 }
 
 // to-do 04 更新状态矩阵A并将状态矩阵A离散化
-void LqrController::UpdateMatrix(const VehicleState &vehicle_state) {}
+void LqrController::UpdateMatrix(const VehicleState &vehicle_state) {
+  double vx=vehicle_state.vx+0.0001;
+  matrix_a_(1, 1)=matrix_a_coeff_(1, 1)/vx;
+  matrix_a_(1, 3)=matrix_a_coeff_(1, 3)/vx;
+  matrix_a_(3, 1)=matrix_a_coeff_(3, 1)/vx;
+  matrix_a_(3, 3)=matrix_a_coeff_(3, 3)/vx;
+  matrix_ad_=Eigen::MatrixXd::Identity(basic_state_size_,basic_state_size_)+matrix_a_*ts_;
+
+}
 
 // to-do 07前馈控制，计算横向转角的反馈量
 double LqrController::ComputeFeedForward(const VehicleState &localization,
@@ -220,7 +233,13 @@ void LqrController::ComputeLateralErrors(const double x, const double y,
                                          const double linear_v,
                                          const double angular_v,
                                          const double linear_a,
-                                         LateralControlErrorPtr &lat_con_err) {}
+                                         LateralControlErrorPtr &lat_con_err) {
+  TrajectoryPoint target_point_=QueryNearestPointByPosition(x, y);
+  double dx=x-target_point_.x;
+  double dy=y-target_point_.y;
+  lat_con_err->lateral_error=-dx*sin(target_point_.heading)+dy*cos(target_point_.heading);
+  lat_con_err->heading_error=NormalizeAngle(theta-target_point_.heading);
+                                         }
 
 // 查询距离当前位置最近的轨迹点
 TrajectoryPoint LqrController::QueryNearestPointByPosition(const double x,
