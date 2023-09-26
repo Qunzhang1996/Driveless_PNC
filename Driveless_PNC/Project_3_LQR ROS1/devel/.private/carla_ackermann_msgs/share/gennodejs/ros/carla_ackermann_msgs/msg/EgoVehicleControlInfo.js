@@ -15,8 +15,8 @@ let EgoVehicleControlMaxima = require('./EgoVehicleControlMaxima.js');
 let EgoVehicleControlTarget = require('./EgoVehicleControlTarget.js');
 let EgoVehicleControlCurrent = require('./EgoVehicleControlCurrent.js');
 let EgoVehicleControlStatus = require('./EgoVehicleControlStatus.js');
-let std_msgs = _finder('std_msgs');
 let carla_msgs = _finder('carla_msgs');
+let std_msgs = _finder('std_msgs');
 
 //-----------------------------------------------------------
 

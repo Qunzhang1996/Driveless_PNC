@@ -98,14 +98,14 @@ b = [0.0, c_f / m, 0.0, l_f * c_f / i_z]^T
   matrix_k_ = Matrix::Zero(1, matrix_size);
   // lqr cost function中 输入值u的权重
   matrix_r_ = Matrix::Identity(1, 1);
-  matrix_r_(0, 0) = 10;
+  matrix_r_(0, 0) = 1;
   // lqr cost function中 状态向量x的权重
   matrix_q_ = Matrix::Zero(matrix_size, matrix_size);
 
   // int q_param_size = 4;
-  matrix_q_(0, 0) = 1;  // lateral_error
+  matrix_q_(0, 0) = 10;  // lateral_error
   matrix_q_(1, 1) = 1;  // lateral_error_rate
-  matrix_q_(2, 2) = 1;  // heading_error
+  matrix_q_(2, 2) = 10;  // heading_error
   matrix_q_(3, 3) = 1;  // heading__error_rate
 
   matrix_q_updated_ = matrix_q_;
@@ -147,16 +147,22 @@ bool LqrController::ComputeControlCommand(
   (-1.0 * (l_f^2 * c_f + l_r^2 * c_r) / i_z) / v;]
   */
   // to-do 01 配置状态矩阵A
-  // Eigen::Matrix4d Matrix_A=Matrix::Zero(basic_state_size_, basic_state_size_);
-  
-
+  matrix_a_(0, 1) = 1.0;
+  matrix_a_(1, 2) = (cf_ + cr_) / mass_;
+  matrix_a_(2, 3) = 1.0;
+  matrix_a_(3, 2) = (lf_ * cf_ - lr_ * cr_) / iz_;
+  matrix_a_coeff_(1, 1) = -(cf_ + cr_) / mass_;
+  matrix_a_coeff_(1, 3) = (lr_ * cr_ - lf_ * cf_) / mass_;
+  matrix_a_coeff_(3, 1) = (lr_ * cr_ - lf_ * cf_) / iz_;
+  matrix_a_coeff_(3, 3) = -1.0 * (lf_ * lf_ * cf_ + lr_ * lr_ * cr_) / iz_;
   /*
   b = [0.0, c_f / m, 0.0, l_f * c_f / i_z]^T
   */
   
   // to-do 02 动力矩阵B
-  matrix_b_=matrix_b_;
-  matrix_bd_=matrix_b_*ts_;
+  matrix_b_(1, 0) = cf_ / mass_;
+  matrix_b_(3, 0) = lf_ * cf_ / iz_;
+  matrix_bd_ = matrix_b_ * ts_;
 
   // cout << "matrix_bd_.row(): " << matrix_bd_.rows() << endl;
   //  cout << "matrix_bd_.col(): " << matrix_bd_.cols() << endl;
@@ -180,7 +186,10 @@ bool LqrController::ComputeControlCommand(
   //   feedback = - K * state
   //   Convert vehicle steer angle from rad to degree and then to steer degrees
   //   then to 100% ratio
-  double steer_angle_feedback = 0;
+  double steer_angle_feedback = -(matrix_k_*matrix_state_)(0,0);
+  steer_angle_feedback=steer_angle_feedback*180.0/M_PI;
+  steer_angle_feedback=steer_angle_feedback*steer_ratio_/steer_single_direction_max_degree_;
+
 
   // to-do 07 计算前馈控制，计算横向转角的反馈量
   double steer_angle_feedforward = 0.0;
@@ -219,8 +228,7 @@ void LqrController::UpdateMatrix(const VehicleState &vehicle_state) {
   matrix_a_(1, 3)=matrix_a_coeff_(1, 3)/vx;
   matrix_a_(3, 1)=matrix_a_coeff_(3, 1)/vx;
   matrix_a_(3, 3)=matrix_a_coeff_(3, 3)/vx;
-  matrix_ad_=Eigen::MatrixXd::Identity(basic_state_size_,basic_state_size_)+matrix_a_*ts_;
-
+  matrix_ad_=Eigen::MatrixXd::Identity(matrix_a_.cols(),matrix_a_.cols())+matrix_a_*ts_;
 }
 
 // to-do 07前馈控制，计算横向转角的反馈量
@@ -235,10 +243,13 @@ void LqrController::ComputeLateralErrors(const double x, const double y,
                                          const double linear_a,
                                          LateralControlErrorPtr &lat_con_err) {
   TrajectoryPoint target_point_=QueryNearestPointByPosition(x, y);
-  double dx=x-target_point_.x;
-  double dy=y-target_point_.y;
+  double dx=target_point_.x-x;
+  double dy=target_point_.y-y;
   lat_con_err->lateral_error=-dx*sin(target_point_.heading)+dy*cos(target_point_.heading);
-  lat_con_err->heading_error=NormalizeAngle(theta-target_point_.heading);
+  double heading_error=target_point_.heading-theta;
+  lat_con_err->heading_error=NormalizeAngle(heading_error);
+  lat_con_err->lateral_error_rate=linear_v*tan(heading_error);
+  lat_con_err->heading_error_rate=angular_v-target_point_.v*target_point_.kappa;
                                          }
 
 // 查询距离当前位置最近的轨迹点
@@ -277,8 +288,20 @@ void LqrController::SolveLQRProblem(const Matrix &A, const Matrix &B,
     std::cout
         << "LQR solver: one or more matrices have incompatible dimensions."
         << std::endl;
+    return;}
+  Eigen::MatrixXd P = Q;
+    for (int i = 0; i < max_num_iteration; ++i) {
+        Eigen::MatrixXd P_next = A.transpose() * P * A - A.transpose() * P * B * (R + B.transpose() * P * B).inverse() * B.transpose() * P * A + Q;
+        if ((P_next - P).norm() < tolerance) {
+            P = P_next;
+            break;
+        }
+        P = P_next;
+    }
+    
+    *ptr_K = (R + B.transpose() * P * B).inverse() * B.transpose() * P * A;
+    std::cout<<"k is:"<<*ptr_K<<std::endl;
     return;
-  }
 }
 
 }  // namespace control
