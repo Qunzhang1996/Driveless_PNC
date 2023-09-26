@@ -1,0 +1,5 @@
+[ 14%] [32mBuilding CXX object CMakeFiles/lqr_control.dir/src/lqr_controller.cpp.o[0m
+[ 28%] [32m[1mLinking CXX shared library /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/.private/lqr_control/lib/liblqr_control.so[0m
+[ 57%] Built target lqr_control
+[ 71%] [32m[1mLinking CXX executable /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/.private/lqr_control/lib/lqr_control/lqr_control_node[0m
+[100%] Built target lqr_control_node

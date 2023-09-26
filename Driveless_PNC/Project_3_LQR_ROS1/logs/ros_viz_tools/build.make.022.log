@@ -1,0 +1,71 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/ros_viz_tools.dir/src/ros_viz_tools.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/ros_viz_tools.dir/src/color.cpp.o[0m
+[ 60%] [32m[1mLinking CXX shared library /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/.private/ros_viz_tools/lib/libros_viz_tools.so[0m
+[ 60%] Built target ros_viz_tools
+[ 80%] [32mBuilding CXX object CMakeFiles/demo_node.dir/src/demo_node.cpp.o[0m
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:34:103:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   34 |         pose.orientation = tf2::toMsg(tf2::Quaternion(0 * M_PI / 180, 45 * M_PI / 180, 45 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                       [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:39:104:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   39 |         pose.orientation = tf2::toMsg(tf2::Quaternion(30 * M_PI / 180, 30 * M_PI / 180, 30 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                        [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:91:102:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   91 |         pose.orientation = tf2::toMsg(tf2::Quaternion(0 * M_PI / 180, 0 * M_PI / 180, 45 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                      [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:105:103:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+  105 |         pose.orientation = tf2::toMsg(tf2::Quaternion(0 * M_PI / 180, 45 * M_PI / 180, 45 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                       [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:114:103:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+  114 |         pose.orientation = tf2::toMsg(tf2::Quaternion(0 * M_PI / 180, 45 * M_PI / 180, 45 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                       [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:123:103:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+  123 |         pose.orientation = tf2::toMsg(tf2::Quaternion(0 * M_PI / 180, 45 * M_PI / 180, 45 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                       [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:135:102:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktf2::Quaternion::Quaternion(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+  135 |         pose.orientation = tf2::toMsg(tf2::Quaternion(0 * M_PI / 180, 0 * M_PI / 180, 90 * M_PI / 180[01;35m[K)[m[K);
+      |                                                                                                      [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:36[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include/ros_viz_tools/ros_viz_tools.h:14[m[K,
+                 from [01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/src/demo_node.cpp:3[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Quaternion.h:52:18:[m[K [01;36m[Knote: [m[Kdeclared here
+   52 |   ROS_DEPRECATED [01;36m[KQuaternion[m[K(const tf2Scalar& yaw, const tf2Scalar& pitch, const tf2Scalar& roll)
+      |                  [01;36m[K^~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/.private/ros_viz_tools/lib/ros_viz_tools/demo_node[0m
+[100%] Built target demo_node

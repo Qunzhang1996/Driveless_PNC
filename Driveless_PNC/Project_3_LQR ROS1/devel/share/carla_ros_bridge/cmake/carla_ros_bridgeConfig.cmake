@@ -1,1 +1,0 @@
-/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/carla_ros_bridge/share/carla_ros_bridge/cmake/carla_ros_bridgeConfig.cmake

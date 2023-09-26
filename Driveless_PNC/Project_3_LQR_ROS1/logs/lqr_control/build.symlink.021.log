@@ -1,0 +1,21 @@
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/lib/liblqr_control.so
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/lib/pkgconfig/lqr_control.pc
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/lib/lqr_control/lqr_control_node
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/share/lqr_control/cmake/lqr_controlConfig.cmake
+Symlinking /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/devel/share/lqr_control/cmake/lqr_controlConfig-version.cmake
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/cmake.lock, /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/./cmake.lock)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/lib/liblqr_control.so, /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/lib/liblqr_control.so)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/lib/pkgconfig/lqr_control.pc, /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/lib/pkgconfig/lqr_control.pc)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/lib/lqr_control/lqr_control_node, /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/lib/lqr_control/lqr_control_node)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/share/lqr_control/cmake/lqr_controlConfig.cmake, /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/share/lqr_control/cmake/lqr_controlConfig.cmake)
+Cleaning: (/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/share/lqr_control/cmake/lqr_controlConfig-version.cmake, /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/share/lqr_control/cmake/lqr_controlConfig-version.cmake)
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/lib/liblqr_control.so
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/lib/pkgconfig/lqr_control.pc
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/lib/lqr_control/lqr_control_node
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/share/lqr_control/cmake/lqr_controlConfig.cmake
+Already unlinked: {}
+Unlinking: /home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/share/lqr_control/cmake/lqr_controlConfig-version.cmake
+Already unlinked: {}
