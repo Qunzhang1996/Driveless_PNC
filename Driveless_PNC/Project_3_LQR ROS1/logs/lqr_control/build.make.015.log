@@ -1,0 +1,9 @@
+[ 14%] [32mBuilding CXX object CMakeFiles/lqr_control.dir/src/lqr_controller.cpp.o[0m
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/src/lqr_control/src/lqr_controller.cpp:[m[K In member function ‘[01m[Kdouble shenlan::control::LqrController::ComputeFeedForward(const VehicleState&, double)[m[K’:
+[01m[K/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/src/lqr_control/src/lqr_controller.cpp:238:71:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  238 |                                          const double ref_curvature) {[01;35m[K}[m[K
+      |                                                                       [01;35m[K^[m[K
+[ 28%] [32m[1mLinking CXX shared library "/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/lib/liblqr_control.so"[0m
+[ 57%] Built target lqr_control
+[ 71%] [32m[1mLinking CXX executable "/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/devel/.private/lqr_control/lib/lqr_control/lqr_control_node"[0m
+[100%] Built target lqr_control_node

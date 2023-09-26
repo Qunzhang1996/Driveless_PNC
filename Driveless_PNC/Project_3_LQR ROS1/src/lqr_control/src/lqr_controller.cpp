@@ -105,7 +105,7 @@ b = [0.0, c_f / m, 0.0, l_f * c_f / i_z]^T
   // int q_param_size = 4;
   matrix_q_(0, 0) = 10;  // lateral_error
   matrix_q_(1, 1) = 1;  // lateral_error_rate
-  matrix_q_(2, 2) = 10;  // heading_error
+  matrix_q_(2, 2) = 1;  // heading_error
   matrix_q_(3, 3) = 1;  // heading__error_rate
 
   matrix_q_updated_ = matrix_q_;
@@ -189,6 +189,8 @@ bool LqrController::ComputeControlCommand(
   double steer_angle_feedback = -(matrix_k_*matrix_state_)(0,0);
   steer_angle_feedback=steer_angle_feedback*180.0/M_PI;
   steer_angle_feedback=steer_angle_feedback*steer_ratio_/steer_single_direction_max_degree_;
+  steer_angle_feedback = std::max(-1.0, std::min(steer_angle_feedback, 1.0));
+
 
 
   // to-do 07 计算前馈控制，计算横向转角的反馈量
@@ -223,17 +225,25 @@ void LqrController::UpdateState(const VehicleState &vehicle_state) {
 
 // to-do 04 更新状态矩阵A并将状态矩阵A离散化
 void LqrController::UpdateMatrix(const VehicleState &vehicle_state) {
-  double vx=vehicle_state.vx+0.0001;
+  double vx=max(vehicle_state.velocity,minimum_speed_protection_);
   matrix_a_(1, 1)=matrix_a_coeff_(1, 1)/vx;
   matrix_a_(1, 3)=matrix_a_coeff_(1, 3)/vx;
   matrix_a_(3, 1)=matrix_a_coeff_(3, 1)/vx;
   matrix_a_(3, 3)=matrix_a_coeff_(3, 3)/vx;
-  matrix_ad_=Eigen::MatrixXd::Identity(matrix_a_.cols(),matrix_a_.cols())+matrix_a_*ts_;
+  Eigen::MatrixXd matrix_i=Eigen::MatrixXd::Identity(matrix_a_.cols(),matrix_a_.cols());
+  matrix_ad_=(matrix_i-ts_*0.5*matrix_a_).inverse()*(matrix_i+ts_*0.5*matrix_a_);
 }
 
 // to-do 07前馈控制，计算横向转角的反馈量
 double LqrController::ComputeFeedForward(const VehicleState &localization,
-                                         const double ref_curvature) {}
+                                         const double ref_curvature) { 
+      const double kv=lr_*mass_/2/cf_/wheelbase_-lf_*mass_/2/cr_/wheelbase_;
+      const double v=localization.velocity;
+      double steer_angle_feedforwardterm;
+      steer_angle_feedforwardterm=(wheelbase_*ref_curvature+kv*v*v*ref_curvature-
+      matrix_k_(0,2)*(lf_*ref_curvature-lf_*mass_*v*v*ref_curvature/2/cr_/wheelbase_));
+      return steer_angle_feedforwardterm;
+                                         }
 
 // to-do 03 计算误差
 void LqrController::ComputeLateralErrors(const double x, const double y,
@@ -290,7 +300,7 @@ void LqrController::SolveLQRProblem(const Matrix &A, const Matrix &B,
         << std::endl;
     return;}
   Eigen::MatrixXd P = Q;
-    for (int i = 0; i < max_num_iteration; ++i) {
+    for (uint i = 0; i < max_num_iteration; ++i) {
         Eigen::MatrixXd P_next = A.transpose() * P * A - A.transpose() * P * B * (R + B.transpose() * P * B).inverse() * B.transpose() * P * A + Q;
         if ((P_next - P).norm() < tolerance) {
             P = P_next;
