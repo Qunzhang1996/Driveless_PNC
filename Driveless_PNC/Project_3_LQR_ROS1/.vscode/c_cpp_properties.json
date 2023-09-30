@@ -8,8 +8,8 @@
       "includePath": [
         "/opt/ros/noetic/include/**",
         "/usr/include/**",
-        "/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/src/lqr_control/include",
-        "/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR ROS1/src/ros_viz_tools/include"
+        "/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/lqr_control/include",
+        "/home/zq/C-programe-practise/Driveless_PNC/Project_3_LQR_ROS1/src/ros_viz_tools/include"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
