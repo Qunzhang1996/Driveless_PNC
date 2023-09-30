@@ -1,1 +1,0 @@
-/home/qrq/Documents/Shenlan_PnC/carla_ros_bridge_ros1/devel/.private/catkin_tools_prebuild/local_setup.bash

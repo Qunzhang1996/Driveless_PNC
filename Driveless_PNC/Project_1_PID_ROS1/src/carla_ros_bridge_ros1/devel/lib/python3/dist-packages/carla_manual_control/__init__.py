@@ -1,1 +1,0 @@
-/home/qrq/Documents/Shenlan_PnC/carla_ros_bridge_ros1/devel/.private/carla_manual_control/lib/python3/dist-packages/carla_manual_control/__init__.py

@@ -1,1 +1,0 @@
-/home/qrq/Documents/Shenlan_PnC/carla_ros_bridge_ros1/devel/.private/carla_ad_demo/share/carla_ad_demo/cmake/carla_ad_demoConfig.cmake

@@ -1,8 +1,0 @@
-prefix=/home/zq/C-programe-practise/Driveless_PNC/Project_1_PID_ROS1/devel/.private/carla_manual_control
-
-Name: carla_manual_control
-Description: Description of carla_manual_control
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: rospy

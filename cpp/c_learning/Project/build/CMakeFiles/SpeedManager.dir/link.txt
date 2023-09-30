@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/SpeedManager.dir/src/speedManager.cpp.o CMakeFiles/SpeedManager.dir/src/main.cpp.o -o SpeedManager 

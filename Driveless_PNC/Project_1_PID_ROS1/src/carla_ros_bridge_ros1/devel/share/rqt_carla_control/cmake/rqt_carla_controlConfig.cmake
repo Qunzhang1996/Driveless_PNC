@@ -1,1 +1,0 @@
-/home/qrq/Documents/Shenlan_PnC/carla_ros_bridge_ros1/devel/.private/rqt_carla_control/share/rqt_carla_control/cmake/rqt_carla_controlConfig.cmake

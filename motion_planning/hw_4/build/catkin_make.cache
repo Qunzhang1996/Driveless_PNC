@@ -1,2 +1,0 @@
-grid_path_searcher:rviz_plugins:waypoint_generator
--DCATKIN_DEVEL_PREFIX=/home/zq/C-programe-practise/motion_planning/hw_4/devel -DCMAKE_INSTALL_PREFIX=/home/zq/C-programe-practise/motion_planning/hw_4/install -G Unix Makefiles

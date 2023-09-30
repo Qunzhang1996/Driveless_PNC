@@ -1,1 +1,0 @@
-/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/.private/carla_twist_to_control/lib/carla_twist_to_control/carla_twist_to_control.py

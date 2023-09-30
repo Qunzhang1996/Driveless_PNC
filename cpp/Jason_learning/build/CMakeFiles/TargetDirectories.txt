@@ -1,3 +1,0 @@
-/home/zq/C-programe-practise/Jason_learning/build/CMakeFiles/my_cmake_exe.dir
-/home/zq/C-programe-practise/Jason_learning/build/CMakeFiles/edit_cache.dir
-/home/zq/C-programe-practise/Jason_learning/build/CMakeFiles/rebuild_cache.dir

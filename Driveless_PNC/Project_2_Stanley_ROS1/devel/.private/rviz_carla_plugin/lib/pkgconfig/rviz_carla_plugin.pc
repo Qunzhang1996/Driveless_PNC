@@ -1,8 +1,0 @@
-prefix=/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/devel/.private/rviz_carla_plugin
-
-Name: rviz_carla_plugin
-Description: Description of rviz_carla_plugin
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

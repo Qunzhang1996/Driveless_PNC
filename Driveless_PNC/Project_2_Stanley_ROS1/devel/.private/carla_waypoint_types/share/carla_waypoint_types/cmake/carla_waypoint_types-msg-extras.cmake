@@ -1,2 +1,0 @@
-set(carla_waypoint_types_MESSAGE_FILES "/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/src/carla-ros-bridge/carla_waypoint_types/msg/CarlaWaypoint.msg")
-set(carla_waypoint_types_SERVICE_FILES "/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/src/carla-ros-bridge/carla_waypoint_types/srv/GetWaypoint.srv;/home/zq/C-programe-practise/Driveless_PNC/Project_2_Stanley_ROS1/src/carla-ros-bridge/carla_waypoint_types/srv/GetActorWaypoint.srv")

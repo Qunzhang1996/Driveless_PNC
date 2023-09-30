@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/HELLOWORLD_cmake.dir/helloworld.cpp.o -o HELLOWORLD_cmake 
